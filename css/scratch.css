@@ -1,0 +1,76 @@
+
+h1{
+    background-color: rgb(204, 137, 60);
+    color: white;
+    height: 90px;
+    line-height: 90px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    
+    
+    }
+
+p{
+    text-align: left;
+font-family: 'Courier New', Courier, monospace;}
+
+
+    body{
+    background-color:rgb(243, 231, 217);
+    }
+
+    li{
+        text-align: left;
+font-family: 'Courier New', Courier, monospace;    
+    }
+
+
+    img{
+        display: block;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+
+}
+
+    iframe{
+        align-content: center;
+    }
+
+    .navbar a {
+        color: rgb(204, 137, 60);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-family: 'Courier New', Courier, monospace;
+      }
+      
+      .navbar a:hover {
+        color: #00aaff;
+      }
+
+      .navbar ul {
+        display: flex;
+        list-style: none;
+        margin:10px;
+        padding: 0;
+        gap: 20px; /* spacing between items */
+      }
+
+      
+
+      .previous{
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(208, 109, 39);
+
+      }
+
+      .chinaa{
+        font-family: 'Courier New', Courier, monospace;
+color: rgb(208, 109, 39);
+      }
+
+      h3{
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(208, 109, 39);
+        text-align: center;
+      }

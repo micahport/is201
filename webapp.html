@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Baby Name Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 350px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 60px;
+      text-transform: uppercase;
+      text-align: center;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Baby Name Generator</h1>
+  <input type="text" id="letterInput" maxlength="1" placeholder="A-Z" />
+  <br>
+  <button onclick="generateName()">Generate Name</button>
+  <div id="result"></div>
+  <button id="tryAgainButton" style="display:none;" onclick="generateName()">Try Again</button>
+</div>
+
+<script>
+  const names = [
+    "Amelia", "Aiden", "Abigail", "Alexander", "Avery", "Aubrey",
+    "Benjamin", "Bella", "Brayden", "Brooke", "Brielle",
+    "Charlotte", "Caleb", "Chloe", "Carter", "Camila",
+    "Daniel", "Daisy", "David", "Delilah", "Dominic",
+    "Elijah", "Ella", "Ethan", "Emma", "Everly",
+    "Finn", "Faith", "Freya", "Felix", "Franklin",
+    "Grace", "Gabriel", "Gianna", "Grayson", "Gideon",
+    "Hazel", "Henry", "Hudson", "Hannah", "Harper",
+    "Isla", "Isaac", "Ivy", "Ian", "Iris",
+    "Jack", "Julia", "James", "Jasmine", "Josiah",
+    "Kai", "Kylie", "Kevin", "Kinsley", "Kayden",
+    "Liam", "Luna", "Levi", "Layla", "Logan",
+    "Mason", "Mia", "Mila", "Matthew", "Madeline",
+    "Noah", "Nora", "Natalie", "Nathan", "Nova",
+    "Olivia", "Owen", "Oscar", "Ophelia", "Orion",
+    "Penelope", "Parker", "Peyton", "Paisley", "Phoenix",
+    "Quinn", "Quincy",
+    "Riley", "Ruby", "Ryan", "Rose", "Reagan",
+    "Sophia", "Samuel", "Scarlett", "Sebastian", "Sadie",
+    "Thomas", "Thea", "Theodore", "Tessa", "Tyler",
+    "Uma", "Uriel",
+    "Violet", "Victoria", "Vincent", "Vivian",
+    "Willow", "Wyatt", "Wesley", "Winter",
+    "Xander", "Ximena",
+    "Yara", "Yasmin",
+    "Zoe", "Zachary", "Zane"
+  ];
+
+  function generateName() {
+    const input = document.getElementById('letterInput').value.toUpperCase();
+    const filteredNames = names.filter(name => name.startsWith(input));
+
+    if (input === '' || !/^[A-Z]$/.test(input)) {
+      document.getElementById('result').innerText = "Please enter a valid letter (A-Z).";
+      return;
+    }
+
+    if (filteredNames.length === 0) {
+      document.getElementById('result').innerText = "No names found for that letter.";
+      return;
+    }
+
+    const randomName = filteredNames[Math.floor(Math.random() * filteredNames.length)];
+    document.getElementById('result').innerText = `How about: ${randomName}`;
+    
+    // Show the Try Again button after generating a name
+    document.getElementById('tryAgainButton').style.display = 'inline-block';
+  }
+</script>
+
+</body>
+</html>
